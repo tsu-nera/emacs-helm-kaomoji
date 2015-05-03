@@ -25,7 +25,15 @@
 
 (require 'helm)
 
-(defconst helm-kaomoji--url "http://kaosute.net/jisyo/pdf2.cgi?file=2ch_ver1&method=download")
+(defgroup helm-kaomoji nil
+  "Settings for helm-kaomoji."
+  :group 'helm)
+
+(defcustom helm-kaomoji--url "http://kaosute.net/jisyo/pdf2.cgi?file=2ch_ver1&method=download"
+  "A URL of kaomoji source"
+  :type '(choice (const nil)
+		 string)
+  :group 'helm-kaomoji)
 
 (defun helm-kaomoji--candidates ()
   (with-temp-buffer
